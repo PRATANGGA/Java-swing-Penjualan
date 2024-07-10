@@ -8,15 +8,40 @@ package com.mycompany.penjualan;
  *
  * @author USER
  */
-public class FormMenu extends javax.swing.JFrame {
-
+public class frmMenu extends javax.swing.JFrame {
+    private String role;
     /**
      * Creates new form FormMenu
      */
-    public FormMenu() {
+    
+      public frmMenu() {
         initComponents();
     }
-
+    public frmMenu(String role) {
+    initComponents();
+    this.role = role;
+    setAccessBasedOnRole();
+    }
+    
+    
+    public void setRole(String role) {
+        this.role = role;
+        setAccessBasedOnRole();
+    }
+    
+      private void setAccessBasedOnRole() {
+        if (role != null) {
+            if (role.equals("admin")) {
+                // Tampilkan semua menu
+                mnMaster.setEnabled(true);
+                mnTransaksi.setEnabled(true);
+            } else if (role.equals("user")) {
+                // Hanya tampilkan menu transaksi
+                mnMaster.setEnabled(false);
+                mnTransaksi.setEnabled(true);
+            }
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -75,6 +100,11 @@ public class FormMenu extends javax.swing.JFrame {
                 mnTransaksiMouseClicked(evt);
             }
         });
+        mnTransaksi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnTransaksiActionPerformed(evt);
+            }
+        });
         jMenuBar2.add(mnTransaksi);
 
         jMenu3.setText("Laporan");
@@ -108,8 +138,12 @@ public class FormMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_mnKonsumenActionPerformed
 
     private void mnTransaksiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnTransaksiMouseClicked
-//      new frmTransaksi().setVisible(true);
+      new frmTransaksi().setVisible(true);
     }//GEN-LAST:event_mnTransaksiMouseClicked
+
+    private void mnTransaksiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnTransaksiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mnTransaksiActionPerformed
 
     /**
      * @param args the command line arguments
@@ -128,20 +162,27 @@ public class FormMenu extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FormMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FormMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FormMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FormMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FormMenu().setVisible(true);
+                new frmMenu().setVisible(true);
             }
         });
     }
