@@ -174,22 +174,15 @@
                   </Group>
                   <Component id="jScrollPane2" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="41" max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="cmdSimpan" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="cmdBatal" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="cmdCetak" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="cmdKeluar" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Component id="cmdTambah" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                  </Group>
+              <EmptySpace pref="50" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="cmdSimpan" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cmdBatal" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cmdCetak" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cmdKeluar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cmdTambah" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -271,10 +264,19 @@
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtHarga">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtHargaActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtJml">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtJmlActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtTot">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtTotActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="cmdHapusItem">
       <Properties>
@@ -376,6 +378,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Cetak"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cmdCetakActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="cmdKeluar">
       <Properties>
@@ -411,6 +416,9 @@
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtKembali">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtKembaliActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnPilih">
       <Properties>
